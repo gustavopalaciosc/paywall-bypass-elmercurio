@@ -11,10 +11,44 @@
     <h1 class="page-title">Paywall Bypass Diario <span class="title-newspaper">El Mercurio</span></h1>
   </header>
   <div class="page-body">
+    <div class="filters-container">
+
+      
+      <div class="input-container">
+        <select class="search-element" name="article-subsections" id="article-subsections">
+          <option value="Acciones">Acciones</option>
+          <option value="Impuestos">Impuestos</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <input 
+          type="number"
+          min="1"
+          max="100"
+          value="25"
+        >
+      </div>
+
+      <div class="input-container">
+        <input 
+          id="date-filter" 
+          type="date"
+        >
+      </div>
+
+
+
+
+    </div>
 
   </div>
   <footer>
 
   </footer>
+  <script type="module" src="js/scripts.js"></script>
+  <script>
+    document.getElementById('date-filter').valueAsDate = new Date();
+  </script>
 </body>
 </html>

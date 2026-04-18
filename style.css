@@ -20,8 +20,23 @@ body {
   color: #103af3;
 }
 
-.page-body {
-  background-color: #cfcfcf;
-  margin: 0;
+.filters-container {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  justify-content: center;
+  gap: 15px;
+  grid: 2;
+  
 }
 
+
+@media (max-width: 600px) {
+  .title-newspaper {
+    color: red;
+  }
+
+  .filters-container {
+    flex-direction: column;
+  }
+}
