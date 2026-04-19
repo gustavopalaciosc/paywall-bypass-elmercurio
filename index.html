@@ -17,12 +17,21 @@
       <div class="input-container">
         <select class="search-element" name="article-subsections" id="article-subsections">
           <option value="Acciones">Acciones</option>
+          <option value="Bonos">Bonos</option>
+          <option value="Monedas">Monedas</option>
+          <option value="Fondos">Fondos</option>
+          <option value="Pensiones">Pensiones</option>
+          <option value="Economía">Economía</option>
+          <option value="Regulaciones">Regulaciones</option>
           <option value="Impuestos">Impuestos</option>
+          <option value="Propiedades">Propiedades</option>
+          
         </select>
       </div>
 
       <div class="input-container">
-        <input 
+        <input
+          id="size-filter"
           type="number"
           min="1"
           max="100"
@@ -31,8 +40,8 @@
       </div>
 
       <div class="input-container">
-        <input 
-          id="date-filter" 
+        <input
+          id="date-filter"
           type="date"
         >
       </div>
@@ -42,6 +51,8 @@
 
     </div>
 
+    <main id="articles" class="articles-grid" aria-live="polite"></main>
+    <p id="articles-status" class="articles-status" role="status"></p>
   </div>
   <footer>
 

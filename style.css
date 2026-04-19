@@ -31,12 +31,30 @@ body {
 }
 
 
-@media (max-width: 600px) {
-  .title-newspaper {
-    color: red;
-  }
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.articles-status {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  
   .filters-container {
     flex-direction: column;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
   }
 }
