@@ -1,8 +1,7 @@
-
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #f8f9fa; 
 }
 
 .page-header {
@@ -10,15 +9,12 @@ body {
   justify-content: center;
   border-bottom: 2px solid #103af3;
   background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
 }
 
 .page-title {
   font-size: 1.8rem;
-}
-
-.section-title {
-  font-size: 14px;
-  color: #292929;
+  margin: 1.5rem 0;
 }
 
 .title-newspaper {
@@ -27,21 +23,57 @@ body {
 
 .filters-container {
   display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 10px;
+  flex-wrap: wrap; 
   justify-content: center;
-  gap: 15px;
-  grid: 2;
+  gap: 20px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
 }
 
 .input-container {
-  width: 100px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  min-width: 160px; 
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.filters-container select,
+.filters-container input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filters-container select:focus,
+.filters-container input:focus {
+  outline: none;
+  border-color: #103af3;
+  box-shadow: 0 0 0 3px rgba(16, 58, 243, 0.15);
 }
 
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 0 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -56,9 +88,14 @@ body {
 }
 
 @media (max-width: 600px) {
-  
   .filters-container {
-    flex-direction: column;
+    margin: 1rem;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .input-container {
+    min-width: 100%; 
   }
 
   .articles-grid {
