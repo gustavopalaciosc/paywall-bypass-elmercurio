@@ -1,9 +1,6 @@
 
 
 
-
-
-
 class Select extends HTMLElement {
   constructor() {
     super();

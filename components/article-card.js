@@ -1,3 +1,4 @@
+
 class ArticleCard extends HTMLElement {
   constructor() {
     super();
@@ -29,7 +30,7 @@ class ArticleCard extends HTMLElement {
   if (!a) return;
 
   const imagen =
-    a.tablas?.tablaMedios?.[0]?.url ||
+    a.tablas?.tablaMedios?.[0]?.Url ||
     a.tablas?.tablaMedios?.[0]?.ruta ||
     "";
 
@@ -119,13 +120,19 @@ class ArticleCard extends HTMLElement {
         </span>
 
         <h2 class="title">
-          <a href="${a.permalink ?? "#"}" target="_blank" rel="noopener noreferrer">
+          <a href="article.html?id=${a.id}&subsection=${a.subSeccion}&date=${a.fechaFiltro}&size=${a.size}" target="_blank" rel="noopener noreferrer">
             ${a.titulo ?? ""}
           </a>
         </h2>
 
         <p class="summary">${resumen}</p>
 
+        <div>
+          <button>
+            Ver
+          </button>
+        </div> 
+  
         <div class="meta">
           ${a.autor ? `<span>${a.autor}</span> · ` : ""}
           <span>${this.formatDate(a.fechaPublicacion)}</span>

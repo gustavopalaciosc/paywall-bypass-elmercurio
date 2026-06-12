@@ -8,14 +8,15 @@ const sizeEl = document.getElementById("size-filter");
 const dateEl = document.getElementById("date-filter");
 const articlesEl = document.getElementById("articles");
 const statusEl = document.getElementById("articles-status");
+const subsection = subsectionEl.value.toLowerCase();
 
 function buildUrl() {
-  const subsection = subsectionEl.value.toLowerCase();
   const params = new URLSearchParams();
   if (sizeEl.value) params.set("size", sizeEl.value);
   if (dateEl.value) params.set("fechaPublicacion", dateEl.value);
   return `${API_BASE}/${encodeURIComponent(subsection)}?${params.toString()}`;
-}
+};
+
 
 function renderArticles(results) {
   articlesEl.replaceChildren();
@@ -28,11 +29,16 @@ function renderArticles(results) {
   const frag = document.createDocumentFragment();
   for (const item of results) {
     const card = document.createElement("article-card");
-    card.article = item;
+    card.article = {
+      ...item,
+      fechaFiltro: dateEl.value,
+      size: sizeEl.value
+    };
     frag.appendChild(card);
   }
   articlesEl.appendChild(frag);
-}
+};
+
 
 async function getArticles() {
   statusEl.textContent = "Cargando...";
@@ -49,7 +55,8 @@ async function getArticles() {
     articlesEl.replaceChildren();
     statusEl.textContent = "Error al cargar los artículos.";
   }
-}
+};
+
 
 [subsectionEl, sizeEl, dateEl].forEach((el) =>
   el.addEventListener("change", getArticles)

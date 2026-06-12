@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>El Mercurio</title>
 </head>
 <body>
@@ -15,7 +15,12 @@
 
       
       <div class="input-container">
-        <select class="search-element" name="article-subsections" id="article-subsections">
+        <h2 class="section-title">Sección</h2>
+        <select 
+          class="search-element" 
+          name="article-subsections" 
+          id="article-subsections"
+        >
           <option value="Acciones">Acciones</option>
           <option value="Bonos">Bonos</option>
           <option value="Monedas">Monedas</option>
@@ -25,11 +30,11 @@
           <option value="Regulaciones">Regulaciones</option>
           <option value="Impuestos">Impuestos</option>
           <option value="Propiedades">Propiedades</option>
-          
         </select>
       </div>
 
       <div class="input-container">
+        <h2 class="section-title">N° Artículos</h2>
         <input
           id="size-filter"
           type="number"
@@ -38,19 +43,14 @@
           value="25"
         >
       </div>
-
       <div class="input-container">
+        <h2 class="section-title">Fecha</h2>
         <input
           id="date-filter"
           type="date"
         >
       </div>
-
-
-
-
     </div>
-
     <main id="articles" class="articles-grid" aria-live="polite"></main>
     <p id="articles-status" class="articles-status" role="status"></p>
   </div>

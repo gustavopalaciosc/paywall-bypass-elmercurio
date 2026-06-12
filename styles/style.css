@@ -16,6 +16,11 @@ body {
   font-size: 1.8rem;
 }
 
+.section-title {
+  font-size: 14px;
+  color: #292929;
+}
+
 .title-newspaper {
   color: #103af3;
 }
@@ -27,9 +32,11 @@ body {
   justify-content: center;
   gap: 15px;
   grid: 2;
-  
 }
 
+.input-container {
+  width: 100px;
+}
 
 .articles-grid {
   display: grid;
@@ -42,7 +49,7 @@ body {
 
 .articles-status {
   text-align: center;
-  color: #666;
+  color: #6d6d6d;
   font-size: 0.9rem;
   padding: 0 1rem 1rem;
   margin: 0;
