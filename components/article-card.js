@@ -128,9 +128,14 @@ class ArticleCard extends HTMLElement {
         <p class="summary">${resumen}</p>
 
         <div>
-          <button>
+          <a
+            class="" 
+            href="article.html?id=${a.id}&subsection=${a.subSeccion}&date=${a.fechaFiltro}&size=${a.size}" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Ver
-          </button>
+          </a>
         </div> 
   
         <div class="meta">
