@@ -8,13 +8,13 @@ const sizeEl = document.getElementById("size-filter");
 const dateEl = document.getElementById("date-filter");
 const articlesEl = document.getElementById("articles");
 const statusEl = document.getElementById("articles-status");
-const subsection = subsectionEl.value.toLowerCase();
+
 
 function buildUrl() {
   const params = new URLSearchParams();
   if (sizeEl.value) params.set("size", sizeEl.value);
   if (dateEl.value) params.set("fechaPublicacion", dateEl.value);
-  return `${API_BASE}/${encodeURIComponent(subsection)}?${params.toString()}`;
+  return `${API_BASE}/${encodeURIComponent(subsectionEl.value.toLowerCase())}?${params.toString()}`;
 };
 
 
